@@ -15,6 +15,17 @@ export async function getPlayers() {
   }
 }
 
+export async function getPlayerDetails(id) {
+  try {
+    const response = await fetch(BASE_URI + `/players/${id}`);
+    const json = await response.json();
+    const result = json.data;
+    return result.player;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
 export async function addPlayer(newPlayer) {
   try {

@@ -1,6 +1,7 @@
 import SinglePlayer from "./SInglePlayer";
 import { useEffect, useState } from "react";
 import { getPlayers } from "../api";
+import Form from "./Form";
 
 
 export default function AllPlayers({selectedPlayer, setSelectedPlayer}) {
