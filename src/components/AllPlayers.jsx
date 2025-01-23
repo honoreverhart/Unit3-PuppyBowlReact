@@ -13,33 +13,36 @@ export default function AllPlayers() {
   }
   getData();
 
-  const displayPlayer = searchParam
-    ? players.filter((player) =>
-        player.name.toLowerCase().startWith(searchParam)
-      )
-    : players;
-
   useEffect(() => {
     getData();
   }, []);
 
-  
-  return(
+  const displayPlayer = searchParam
+    ? players.filter((player) =>
+        player.name.toLowerCase().startsWith(searchParam)
+      )
+    : players;
+
+  return (
     <div>
-      <h1> Add a Player</h1>
+      <h1> Enter a Puppy! </h1>
       <Form getData={getData} />
       <h1>Players</h1>
       <div>
         <label>
-          Search:{" "}
-          <input type="text" placeholder="search" onChange={(e) => setSearchParam(e.target.value.toLowerCase())} />
+          Find a Puppy:{" "}
+          <input
+            type="text"
+            placeholder="search"
+            onChange={(e) => setSearchParam(e.target.value.toLowerCase())}
+          />
         </label>
       </div>
       {displayPlayer.map((player) => {
-        return(
+        return (
           <SinglePlayer key={player.id} player={player} getData={getData} />
-        )
+        );
       })}
     </div>
-  )
+  );
 }

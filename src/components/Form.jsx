@@ -1,12 +1,21 @@
-import { addPlayer } from "../api";
-import { useState} from "react";
+import { addPlayer, getTeams } from "../api";
+import { useState, useEffect } from "react";
 
-export default function Form() {
+export default function Form({ getData }) {
+  const [teams, setTeams] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
     breed: "",
     imageUrl: "",
+    teamId: "",
   });
+
+  useEffect(() => {
+    async function getTeamData() {
+      setTeams(await getTeams());
+    }
+    getTeamData();
+  }, []);
 
   function handleChange(e) {
     {
@@ -20,21 +29,28 @@ export default function Form() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    
+
     try {
-      addPlayer(formData);
+      await addPlayer(formData);
+      getData();
+      setFormData({
+        name: "",
+        breed: "",
+        imageUrl: "",
+        teamId: "",
+      });
     } catch (error) {
-      setFormData(error.message);
+      console.log(error.message);
     }
   }
   return (
     <div>
-      <h2 className="h2">Enter a Puppy!</h2>
       <form onSubmit={handleSubmit}>
         <label className="label">
-          Name:{""}
+          Puppy Name:{""}
           <input
             type="text"
+            placeholder="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -44,21 +60,33 @@ export default function Form() {
           Breed:{""}
           <input
             type="text"
+            placeholder="breed"
             name="breed"
             value={formData.breed}
             onChange={handleChange}
           />
         </label>
         <label className="label">
-          Image Url:{""}
+          Image:{""}
           <input
             type="text"
+            placeholder="image url"
             name="imageUrl"
             value={formData.imageUrl}
             onChange={handleChange}
           />
         </label>
-        <button className="button">Submit</button>
+        <label>
+          <select name="teamId" value={formData.teamId} onChange={handleChange}>
+            <option value=" ">Select Team</option>
+            {teams.map((team) => (
+              <option key={team.id} value={team.id}>
+                {team.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <button className="button">Enter!</button>
       </form>
     </div>
   );

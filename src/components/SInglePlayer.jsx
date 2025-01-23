@@ -17,34 +17,9 @@ export default function SinglePlayer({ player }) {
       <div className="playerCard">
         <img src={player.imageUrl} />
         <h1>Name: {player.name}</h1>
-        <button id="details" onClick={showDetails}>
-          Details
-        </button>
-        <button id="delete" onClick={handleDelete}>
-          Delete
-        </button>
+        <button id="details" onClick={showDetails}> See Details :) </button>
+        <button id="delete" onClick={handleDelete}> Delete :( </button>
       </div>
-
-      {/* {selectedPlayer ? (
-        <div className="playerCard">
-          <img src={selectedPlayer.imageUrl} />
-          <h1>Name: {selectedPlayer.name}</h1>
-          <h2>Breed: {selectedPlayer.breed}</h2>
-          <h2>Status: {selectedPlayer.status}</h2>
-          <button onClick={() => setSelectedPlayer(null)}>Go Back</button>
-        </div>
-      ) : (
-        <div className="playerCard">
-          <img src={player.imageUrl} />
-          <h1>Name: {player.name}</h1>
-          <h2>Breed: {player.breed}</h2>
-          <h2>Status: {player.status}</h2>
-          <button onClick={() => setSelectedPlayer(player)}>
-            See Details :)
-          </button>
-          <button onClick={() => handleDelete()}>Delete :( </button>
-        </div>
-      )} */}
     </>
   );
 }

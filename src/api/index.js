@@ -10,8 +10,8 @@ export async function getPlayers() {
 
     const result = json.data;
     return result.players;
-  } catch (err) {
-    console.error("Uh oh, trouble fetching players!", err);
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -26,7 +26,6 @@ export async function getPlayerDetails(id) {
   }
 }
 
-
 export async function addPlayer(newPlayer) {
   try {
     const response = await fetch(`${BASE_URL}/players`, {
@@ -36,13 +35,10 @@ export async function addPlayer(newPlayer) {
       },
       body: JSON.stringify(newPlayer),
     });
-    if (!response.ok) {
-      throw new Error(`Failed to add event: ${response.status}`);
-    }
-    const result = await response.json();
-    window.location.reload()
-  } catch (err) {
-    console.error("Oops, something went wrong with adding that player!", err);
+    console.log(response);
+    window.location.reload();
+  } catch (error) {
+    console.log(error);
   }
 }
 export async function deletePlayer(playerId) {
@@ -52,7 +48,7 @@ export async function deletePlayer(playerId) {
     });
     const result = await response.json();
     console.log(result);
-    window.location.reload()
+    window.location.reload();
 
     if (!response.ok) {
       throw new Error(
@@ -60,26 +56,17 @@ export async function deletePlayer(playerId) {
       );
     }
   } catch (err) {
-    console.error(
-      `Whoops, trouble removing player #${playerId} from the roster!`,
-      err
-    );
+    console.error(err);
   }
 }
 
-
-// const response = await fetch(API_URL + "/players", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(newPlayer),
-//     });
-//     const result = await response.json();
-//     return result
-// await fetch(API_URL + "/players/" + playerId, {
-//       method: "DELETE",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//     });
+export async function getTeams() {
+  try {
+    const response = await fetch(`${BASE_URL}/teams`);
+    const json = await response.json();
+    const result = json.data;
+    return result.teams;
+  } catch (error) {
+    console.log(error);
+  }
+}
