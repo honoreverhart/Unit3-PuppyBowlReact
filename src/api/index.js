@@ -17,7 +17,7 @@ export async function getPlayers() {
 
 export async function getPlayerDetails(id) {
   try {
-    const response = await fetch(BASE_URI + `/players/${id}`);
+    const response = await fetch(BASE_URL + `/players/${id}`);
     const json = await response.json();
     const result = json.data;
     return result.player;

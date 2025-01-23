@@ -1,21 +1,19 @@
 import { useState, useEffect } from "react";
 import AllPlayers from "./components/AllPlayers";
 import "./App.css";
-import SinglePlayer from "./components/SInglePlayer";
-import Form from "./components/Form";
-import { Routes, Route } from "react-router-dom";
-import { useParams, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-dom";
+import PlayerDetails from "./components/PlayerDetails";
 
 
-function App() {
-  const [selectedPlayer, setSelectedPlayer] = useState(null);
+export default function App() {
+  // const [selectedPlayer, setSelectedPlayer] = useState(null);
 
   
   
 
   return (
     <>
-      <Form/>
+
       {/* {selectedPlayer ? (
         <SinglePlayer
           selectedPlayer={selectedPlayer}
@@ -35,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+
