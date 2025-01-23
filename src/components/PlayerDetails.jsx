@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getPlayerDetails } from "../api";
 
 export default function PlayerDetails() {

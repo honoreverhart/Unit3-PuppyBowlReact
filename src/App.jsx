@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import AllPlayers from "./components/AllPlayers";
 import "./App.css";
-import { Routes, Route } from "react-dom";
+import { Routes, Route } from "react-router-dom";
 import PlayerDetails from "./components/PlayerDetails";
 
 
