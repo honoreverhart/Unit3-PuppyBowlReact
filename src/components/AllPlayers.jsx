@@ -27,13 +27,15 @@ export default function AllPlayers() {
   return(
     <div>
       <h1> Add a Player</h1>
+      <Form getData={getData} />
+      <h1>Players</h1>
       <div>
         <label>
-          SSearch:{" "}
+          Search:{" "}
           <input type="text" placeholder="search" onChange={(e) => setSearchParam(e.target.value.toLowerCase())} />
         </label>
       </div>
-      {displayPlayer.map((plaer) => {
+      {displayPlayer.map((player) => {
         return(
           <SinglePlayer key={player.id} player={player} getData={getData} />
         )
