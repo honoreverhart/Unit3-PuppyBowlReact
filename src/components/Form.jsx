@@ -76,7 +76,7 @@ export default function Form({ getData }) {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="label">
           <select name="teamId" value={formData.teamId} onChange={handleChange}>
             <option value=" ">Select Team</option>
             {teams.map((team) => (

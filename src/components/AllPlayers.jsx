@@ -25,11 +25,11 @@ export default function AllPlayers() {
 
   return (
     <div>
-      <h1> Enter a Puppy! </h1>
+      <h1 className="header"> Enter a Puppy! </h1>
       <Form getData={getData} />
-      <h1>Players</h1>
+      <h1 className="header">Players</h1>
       <div>
-        <label>
+        <label className="label">
           Find a Puppy:{" "}
           <input
             type="text"
