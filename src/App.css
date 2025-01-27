@@ -46,6 +46,7 @@
   background-color:cornflowerblue;
   color:burlywood;
   margin: 20px;
+  font-family: cursive;
 }
 
 .playerCard img{
@@ -58,12 +59,19 @@
 }
 
 .singlePuppy{
-  
+  background-color:cornflowerblue;
+  color:burlywood;
+  font-family: cursive;
 
+}
+.singlePuppyImg{
+  margin:30px;
+  width: 350px;
+  height: 300px;
 }
 .label{
-
+  font-family:cursive;
 }
 .header{
-  
+  font-family: cursive;
 }

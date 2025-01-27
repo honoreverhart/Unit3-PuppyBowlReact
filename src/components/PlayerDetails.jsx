@@ -17,7 +17,7 @@ export default function PlayerDetails() {
   return (
     <>
       <div className="singlePuppy">
-        <img src={playerDetails.imageUrl} />
+        <img className="singlePuppyImg" src={playerDetails.imageUrl} />
         <h1>{playerDetails.name}</h1>
         <h2>Breed: {playerDetails.breed}</h2>
         <h2>Status: {playerDetails.status}</h2>
