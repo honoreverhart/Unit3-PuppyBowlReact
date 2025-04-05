@@ -24,7 +24,7 @@ This Project displays a list of puppies all competing in a 'Puppy Bowl'. The pup
 - npm -- Run site 
 - Fetch API -- Pull Backend Data
 - Prettier -- Formatting
-- Netlify -- Deploy Porject
+- Netlify -- Deploy Project
  
 ## Installation Process
 - Fork Project
